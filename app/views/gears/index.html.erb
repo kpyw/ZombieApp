@@ -1,0 +1,31 @@
+<h1>Zombie Apocalypse Survival Gear</h1>
+<div class='image'>
+<% if @viewed_items.present? %>
+  <% @viewed_items.each do |view| %>
+  <%= image_tag view.image_url %>
+  <% end %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image URL</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @gears.each do |gear| %>
+    <tr>
+      <td><%= image_tag gear.image_url %></td>
+      <td><%= link_to gear.name, gear_url(gear) %></td>
+      <td><%= gear.description %></td>
+      <td><%= number_to_currency(gear.price) %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>

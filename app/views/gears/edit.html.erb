@@ -1,0 +1,31 @@
+<h1>Editing Gear #<%= @gear.id %></h1>
+
+
+<%= form_tag(gear_url(@gear), method: 'patch') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @gear.name %>
+  </div>
+
+  <div>
+    <%= label_tag :description %><br />
+    <%= text_area_tag :description, @gear.description %>
+  </div>
+
+  <div>
+    <%= label_tag :price %><br />
+    <%= number_field_tag :price, @gear.price %>
+  </div>
+
+  <div>
+    <%= label_tag :image_url %><br />
+    <%= text_field_tag :image_url, @gear.image_url %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Gear" %>
+  </div>
+
+<% end %>

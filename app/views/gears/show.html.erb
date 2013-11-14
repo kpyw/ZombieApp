@@ -1,0 +1,21 @@
+<h1 class = 'big_image'><%= image_tag @gear.image_url %></h1>
+
+<p>
+  <b>Name:</b>
+  <%= @gear.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @gear.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= number_to_currency(@gear.price) %>
+</p>
+
+<p>
+<%= link_to "Return to master list", gears_url %>
+</p>
+
